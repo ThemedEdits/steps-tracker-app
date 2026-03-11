@@ -19,15 +19,8 @@ export const AppLayout: React.FC = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-600/3 rounded-full blur-3xl" />
       </div>
 
-      {/* Sidebar */}
-      <div className="hidden md:flex md:flex-shrink-0">
-        <Sidebar />
-      </div>
-      
-      {/* Mobile sidebar */}
-      <div className="md:hidden">
-        <Sidebar />
-      </div>
+      {/* Sidebar — single instance, handles both desktop and mobile */}
+      <Sidebar />
 
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">

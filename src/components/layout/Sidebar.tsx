@@ -43,13 +43,14 @@ export const Sidebar: React.FC = () => {
         />
       )}
 
-      {/* Sidebar */}
-      <motion.aside
-        initial={false}
-        animate={{ x: sidebarOpen ? 0 : -280 }}
-        className="fixed left-0 top-0 h-full w-64 z-50 glass-strong border-r border-night-700/50 flex flex-col md:translate-x-0 md:relative md:z-auto"
-        style={{ translateX: undefined }}
-      >
+      {/* Sidebar — always visible on desktop, slide in/out on mobile */}
+      <aside className={`
+        fixed left-0 top-0 h-full w-64 z-50 flex flex-col
+        glass-strong border-r border-night-700/50
+        transition-transform duration-300 ease-in-out
+        md:relative md:translate-x-0 md:z-auto
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+      `}>
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-6 border-b border-night-700/50">
           <div className="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center glow-orange-sm">
@@ -117,7 +118,7 @@ export const Sidebar: React.FC = () => {
             Sign Out
           </button>
         </div>
-      </motion.aside>
+      </aside>
     </>
   );
 };
