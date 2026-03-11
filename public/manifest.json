@@ -1,0 +1,9 @@
+{
+  "name": "RunTrack",
+  "short_name": "RunTrack",
+  "description": "Modern running and walking tracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080c10",
+  "theme_color": "#f97316"
+}
